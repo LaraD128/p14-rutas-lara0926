@@ -1,43 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:lara0926/pantalla1_0926.dart';
+import 'package:lara0926/pantalla2_0926.dart';
+import 'package:lara0926/pantallainicial_0926.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MiApp0926());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
+class MiApp0926 extends StatelessWidget {
+  const MiApp0926({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        // useMaterial3: false,
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      debugShowCheckedModeBanner: false,
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const PantallaInicial_0926(),
+        "/Pantalla1_0926": (context) => const Pantalla1_0926(),
+        "/Pantalla2_0926": (context) => const Pantalla2_0926(),
+      }, //Fin rutas de pagina
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
-        ),
-      ),
-    );
-  }
-}
+  } //Fin Widget
+} //Fin MiApp0926
